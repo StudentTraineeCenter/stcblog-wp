@@ -376,6 +376,20 @@ function smartwp_remove_wp_block_library_css(){
 }
 add_action( 'wp_enqueue_scripts', 'smartwp_remove_wp_block_library_css', 100 );
 
+/** 
+ * Add a listen button to each post
+ * 
+ * @author Filip Cerny
+ */
+function add_listen_btn($content){
+    if (is_single()) {
+        $listen_btn = "<audio id=\"play_button\"controls=\"true\" src=\"empty\" class= \"article-audio\"></audio>";
+        return $listen_btn . $content;
+    }
+    return $content;
+}
+add_filter('the_content', 'add_listen_btn', 20, 1);
+
 /**
  * Disable WordPress emojis
  * 

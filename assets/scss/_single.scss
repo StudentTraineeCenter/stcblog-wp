@@ -170,6 +170,15 @@
         padding: 0;
         border: none;
       }
+      audio::-webkit-media-controls-panel {
+        background-color: #56AEFF;
+      }
+      .article-audio{
+        width: 800px;
+      }
+      audio[src*="empty"] {
+        display:none;
+      }
     }
 
     // style of file for download
